@@ -1,0 +1,18 @@
+#uploadSection{
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#input_file{  
+    position: relative;
+    left: 4%;
+}
+
+#submit{
+    width: 5rem;    
+}
