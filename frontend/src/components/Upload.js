@@ -18,7 +18,7 @@ function Upload() {
     console.log("uploading files");
     const data = new FormData();
     for (let i = 0; i < selectedFile.length; i++) {
-      data.append(`file`, selectedFile[i]);
+      data.append(`file`, selectedFile[i]);           //be carefull while using the fieldname
     }
     axios
       .post("http://localhost:5000/upload", data, {
@@ -37,7 +37,13 @@ function Upload() {
   return (
     <div id="uploadSection">
       <h1>Upload</h1>
-      <input id="input_file" onChange={changeSelection} type="file" multiple />
+      <input
+        id="input_file"
+        name="file"                     //its the fieldname be carefull i.e: needs update on server side too 
+        onChange={changeSelection}
+        type="file"
+        multiple
+      />
       <button id="submit" onClick={uploadFile}>
         Submit
       </button>
